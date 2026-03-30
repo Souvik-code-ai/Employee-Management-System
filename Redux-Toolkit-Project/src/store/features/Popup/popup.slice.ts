@@ -15,13 +15,13 @@ export const popupSlice = createSlice({
   name: 'popup',
   initialState,
   reducers: {
-    openEmployeePopup:(state,action)=>{
-        state.employeePopup=action.payload ?? true;
+    openEmployeePopup:(state)=>{
+        state.employeePopup= true;
     },
     closeEmployeePopup:(state)=>{
       state.employeePopup=false;
     },
-    openDeletePopup:(state,action)=>{
+    openDeletePopup:(state)=>{
       console.log("delete")
       state.deletePopup= true;
     },

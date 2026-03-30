@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { closeDeletePopup } from "../../store/features/Popup/popup.slice";
+import type { RootState } from "../../store/store";
 const DeletePopup = () => {
   const dispatch = useDispatch();
-  const deletePopup = useSelector(state => state.popup.deletePopup);
+  const deletePopup = useSelector((state:RootState) => state.popup.deletePopup);
   console.log(deletePopup)
   if (deletePopup === false) {
     return null;

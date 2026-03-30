@@ -1,9 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { closeEmployeePopup } from "../../store/features/Popup/popup.slice";
+import type { RootState } from "../../store/store";
+import type { AppDispatch } from "../../store/store";
 const EmployeePopup = () => {
-  const popup = useSelector((state) => state.popup.employeePopup);
+  const popup = useSelector((state:RootState) => state.popup.employeePopup);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   console.log(popup);
   if (popup === false) {
     return null;
@@ -18,12 +20,12 @@ const EmployeePopup = () => {
         className="bg-base-100 w-full max-w-lg rounded-2xl shadow-xl p-5 sm:p-6 relative animate-fadeIn"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
+        {/* <button
           className="absolute top-3 right-3 btn btn-sm btn-circle btn-ghost"
           onClick={() => dispatch(closeEmployeePopup())}
         >
           
-        </button>
+        </button> */}
         <h2 className="text-lg sm:text-xl font-semibold mb-4">
           Employee Details
         </h2>
