@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getEmployees } from "./employee.thunk";
+import { getEmployees, postEmployees } from "./employee.thunk";
 interface Employee {
   id: number;
   firstName: string;
@@ -34,6 +34,20 @@ const employeeSlice = createSlice({
     });
 
     builder.addCase(getEmployees.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message || "Something went wrong";
+    });
+      builder.addCase(postEmployees.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    });
+
+    builder.addCase(postEmployees.fulfilled, (state) => {
+
+      state.loading = false;
+    });
+
+    builder.addCase(postEmployees.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message || "Something went wrong";
     });

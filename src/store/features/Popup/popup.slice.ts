@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export interface CounterState {
   employeePopup: boolean,
-  deletePopup:boolean
+  deletePopup:string|null
 }
 
 const initialState: CounterState = {
   employeePopup: false,
-  deletePopup:false
+  deletePopup:null
 }
 
 export const popupSlice = createSlice({
@@ -21,12 +21,12 @@ export const popupSlice = createSlice({
     closeEmployeePopup:(state)=>{
       state.employeePopup=false;
     },
-    openDeletePopup:(state)=>{
+    openDeletePopup:(state,action)=>{
       console.log("delete")
-      state.deletePopup= true;
+      state.deletePopup= action.payload;
     },
     closeDeletePopup:(state)=>{
-      state.deletePopup=false;
+      state.deletePopup=null;
     }
   },
 })
