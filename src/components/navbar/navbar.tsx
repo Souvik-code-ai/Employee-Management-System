@@ -8,7 +8,7 @@ const Navbar = () => {
       <Layout>
         <div className="flex items-center w-full min-h-16 px-8 sm:px-10">
           <div className="flex items-center justify-start w-1/2">
-            <h1 className="text-xl sm:text-2xl font-bold">PeopleDesk</h1>
+            <h1 className="text-xl sm:text-2xl font-bold">PeopleDesk..</h1>
           </div>
 
           <div className="flex items-center justify-end w-1/2 gap-2">
