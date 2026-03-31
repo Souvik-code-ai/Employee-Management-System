@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <EmployeePopup />
       <DeletePopup />
-      <div className="flex-1 py-6 px-4 sm:px-6 md:px-10">
+      <div className="flex-1 py-6 px-4 sm:px-8 md:px-10">
         <Employee />
       </div>
       <Footer />
