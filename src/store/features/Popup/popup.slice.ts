@@ -31,7 +31,6 @@ export const popupSlice = createSlice({
   },
 })
 
-// Action creators are generated for each case reducer function
 export const { openEmployeePopup, closeEmployeePopup,openDeletePopup,closeDeletePopup } = popupSlice.actions
 
 export default popupSlice.reducer

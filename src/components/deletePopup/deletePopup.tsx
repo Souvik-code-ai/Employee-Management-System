@@ -14,7 +14,9 @@ const DeletePopup = () => {
 
   const handleDelete = async () => {
 
-    if (!deletePopup) return;
+    if (!deletePopup) {
+      return;
+    }
 
     await dispatch(deleteEmployees(deletePopup));
     dispatch(closeDeletePopup());

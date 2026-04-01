@@ -201,9 +201,10 @@ const EmployeePopup = ({ editEmployee }: Props) => {
     highlight: false
   };
 
+
   const [formDetails, setFormDetails] = useState(defaultForm);
 
-  // ✅ Prefill form for edit / reset for add
+
   useEffect(() => {
     if (editEmployee) {
       setFormDetails({
@@ -218,13 +219,14 @@ const EmployeePopup = ({ editEmployee }: Props) => {
     }
   }, [editEmployee]);
 
-  // ✅ Close handler (reset + close)
+
+
+
   const handleClose = () => {
     setFormDetails(defaultForm);
     dispatch(closeEmployeePopup());
   };
 
-  // ✅ Controlled input handler
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -236,7 +238,7 @@ const EmployeePopup = ({ editEmployee }: Props) => {
     }));
   };
 
-  // ✅ Submit (POST / PUT)
+
   const handleSubmit = async () => {
     if (editEmployee?.id) {
       await dispatch(
@@ -252,7 +254,7 @@ const EmployeePopup = ({ editEmployee }: Props) => {
     handleClose();
   };
 
-  // ✅ Don't render if popup closed
+  
   if (!popup) return null;
 
   return (
@@ -269,7 +271,7 @@ const EmployeePopup = ({ editEmployee }: Props) => {
         </h2>
 
         <div className="flex flex-col gap-3">
-          {/* Profile URL */}
+     
           <div>
             <label className="text-sm font-medium">Profile URL</label>
             <input
@@ -282,7 +284,7 @@ const EmployeePopup = ({ editEmployee }: Props) => {
             />
           </div>
 
-          {/* Name */}
+       
           <div>
             <label className="text-sm font-medium">Name</label>
             <input
@@ -295,7 +297,7 @@ const EmployeePopup = ({ editEmployee }: Props) => {
             />
           </div>
 
-          {/* Email */}
+ 
           <div>
             <label className="text-sm font-medium">Email</label>
             <input
@@ -308,7 +310,7 @@ const EmployeePopup = ({ editEmployee }: Props) => {
             />
           </div>
 
-          {/* Bio */}
+     
           <div>
             <label className="text-sm font-medium">Bio</label>
             <textarea
@@ -320,7 +322,6 @@ const EmployeePopup = ({ editEmployee }: Props) => {
             />
           </div>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-2 mt-4">
             <button
               onClick={handleSubmit}

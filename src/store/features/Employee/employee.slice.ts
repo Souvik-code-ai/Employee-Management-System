@@ -1,17 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getEmployees, postEmployees } from "./employee.thunk";
-interface Employee {
-  id: number;
-  firstName: string;
-  lastName: string;
-  image: string;
+// interface Employee {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   image: string;
+// }
+// interface EmployeeState {
+//   employees: Employee[];
+//   loading: boolean;
+//   error: string | null;
+// }
+export interface Employee {
+  id: string;
+  profileUrl: string;
+  name: string;
+  email: string;
+  bio: string;
+  highlight: boolean;
 }
-interface EmployeeState {
+
+export interface EmployeeState {
   employees: Employee[];
   loading: boolean;
   error: string | null;
 }
-
 const initialState: EmployeeState = {
   employees: [],
   loading: false,
